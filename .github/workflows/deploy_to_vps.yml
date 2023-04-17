@@ -23,5 +23,5 @@ jobs:
           fi
           cd /home/amacoon/deploy/AmacoonDocker
           git pull
-          docker-compose up --build -d
+          
 
