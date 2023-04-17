@@ -1,0 +1,27 @@
+name: Deploy to VPS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup SSH and execute commands on VPS
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        script: |
+          if [ ! -d "/deploy/AmacoonDocker" ]; then
+            git clone https://github.com/yourusername/yourrepository.git /deploy
+          fi
+          cd /deploy/AmacoonDocker
+          git pull
+          docker-compose up --build -d
+
