@@ -18,10 +18,11 @@ jobs:
         username: ${{ secrets.VPS_USERNAME }}
         password: ${{ secrets.VPS_PASSWORD }}
         script: |
-          if [ ! -d "/home/amacoon/deploy/AmacoonDocker" ]; then
+          if [ ! -d "/home/amacoon/deploy" ]; then
             git clone https://github.com/scuba13/AmacoonDocker.git /home/amacoon/deploy
           fi
-          cd /home/amacoon/deploy/AmacoonDocker
+          cd /home/amacoon/deploy
+
           git pull
           
 
