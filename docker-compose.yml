@@ -8,14 +8,14 @@ services:
   #   networks:
   #     - mynetwork
 
-  backend:
-    image: scuba13/amacoon_service:latest
-    ports:
-      - '8080:8080'
-    depends_on:
-      - mongo
-    networks:
-      - mynetwork
+  # backend:
+  #   image: scuba13/amacoon_service:latest
+  #   ports:
+  #     - '8080:8080'
+  #   depends_on:
+  #     - mongo
+  #   networks:
+  #     - mynetwork
 
   # nginx:
   #   image: nginx:latest
