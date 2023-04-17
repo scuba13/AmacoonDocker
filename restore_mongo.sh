@@ -3,13 +3,13 @@
 # Script de restauração do volume mongodb_data_container
 
 # Verifica se o arquivo de backup existe
-if [ ! -f "/backup/mongodb_data_backup.tar.gz" ]; then
-  echo "O arquivo de backup não existe em /backup/mongodb_data_backup.tar.gz"
+if [ ! -f "/home/amacoon/deploy/backup/mongodb_data_backup.tar.gz" ]; then
+  echo "O arquivo de backup não existe em /home/amacoon/deploy/backup/mongodb_data_backup.tar.gz"
   exit 1
 fi
 
 # Cria um container temporário com o volume mongodb_data_container montado
-docker run --name temp-mongodb-data-container -it -v mongodb_data_container:/data/db -v /backup:/backup ubuntu /bin/bash << EOF
+docker run --name temp-mongodb-data-container -it -v mongodb_data_container:/data/db -v /home/amacoon/deploy/backup:/backup ubuntu /bin/bash << EOF
 # Extrai os dados do arquivo de backup
 tar xzf /backup/mongodb_data_backup.tar.gz -C /data/db
 EOF
