@@ -1,12 +1,12 @@
 version: '3.3'
 
 services:
-  frontend:
-    image: scuba13/amacoon_web:latest
-    ports:
-      - "3000:3000"
-    networks:
-      - mynetwork
+  # frontend:
+  #   image: scuba13/amacoon_web:latest
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - mynetwork
 
   backend:
     image: scuba13/amacoon_service:latest
@@ -17,16 +17,16 @@ services:
     networks:
       - mynetwork
 
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    depends_on:
-      - frontend
-    networks:
-      - mynetwork
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  #   depends_on:
+  #     - frontend
+  #   networks:
+  #     - mynetwork
 
   mongo:
     image: mongo:latest
