@@ -1,7 +1,9 @@
 name: Deploy to VPS
 
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - new_docker_image
 
 jobs:
   deploy:
