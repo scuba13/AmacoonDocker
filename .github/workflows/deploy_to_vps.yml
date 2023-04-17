@@ -23,6 +23,14 @@ jobs:
           fi
           cd /home/amacoon/deploy
 
-          git pull
-          
+          # Stop the running containers and remove them
+          docker-compose down
 
+          # Update the repository
+          git pull
+
+           # Wait for 10 seconds
+          sleep 20
+
+          # Start the new containers
+          docker-compose up --build -d
