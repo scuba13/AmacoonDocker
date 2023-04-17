@@ -20,10 +20,10 @@ jobs:
         username: ${{ secrets.VPS_USERNAME }}
         password: ${{ secrets.VPS_PASSWORD }}
         script: |
-          if [ ! -d "/home/amacoon/deploy" ]; then
-            git clone https://github.com/scuba13/AmacoonDocker.git /home/amacoon/deploy
+          if [ ! -d "/home/amacoon/amacoondocker" ]; then
+            git clone https://github.com/scuba13/AmacoonDocker.git /home/amacoon/amacoondocker
           fi
-          cd /home/amacoon/deploy
+          cd /home/amacoon/amacoondocker
           # Stop the running containers and remove them
           docker-compose down
           # Update the repository
