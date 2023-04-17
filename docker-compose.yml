@@ -2,18 +2,14 @@ version: '3.3'
 
 services:
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: scuba13/amacoon_web:latest
     ports:
       - "3000:3000"
     networks:
       - mynetwork
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: scuba13/amacoon_service:latest
     ports:
       - '8080:8080'
     depends_on:
