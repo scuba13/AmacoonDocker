@@ -24,13 +24,13 @@ jobs:
           git clone https://github.com/scuba13/AmacoonDocker.git /home/amacoon/amacoondocker
           fi
           cd /home/amacoon/amacoondocker
-        # Stop the running containers and remove them
+          # Stop the running containers and remove them
           docker-compose down
-        # Update the repository
+          # Update the repository
           git pull
           # Wait for 10 seconds
           sleep 20
-        # Pull the latest images
+          # Pull the latest images
           docker-compose pull
-        # Start the new containers
+          # Start the new containers
           docker-compose up --build -d
