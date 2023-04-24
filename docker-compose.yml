@@ -31,8 +31,8 @@ services:
   mongo:
     image: mongo:latest
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_ROOT_USERNAME: rootamacoon
+      MONGO_INITDB_ROOT_PASSWORD: rootpasswordamacoon
     ports:
       - 27017:27017
     volumes:
@@ -45,8 +45,8 @@ services:
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: rootpassword
+      ME_CONFIG_MONGODB_ADMINUSERNAME: rootamacoon
+      ME_CONFIG_MONGODB_ADMINPASSWORD: rootpasswordamacoon
       ME_CONFIG_MONGODB_SERVER: mongo
     depends_on:
       - mongo
