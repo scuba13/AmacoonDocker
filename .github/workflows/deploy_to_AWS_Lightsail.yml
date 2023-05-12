@@ -23,4 +23,6 @@ jobs:
       - name: Deploy to AWS Lightsail
         run: |
           aws lightsail create-container-service-deployment --service-name amacoon --containers file://aws-compose.json
+          
+
 
