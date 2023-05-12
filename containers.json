@@ -10,7 +10,7 @@
       }
   },
   "amacoonservice": {
-      "image": "scuba13/amacoon_service:latest",
+      "image": ":amacoon.amacoon-service.1",
       "ports": {
           "8080": "HTTP"
       }
