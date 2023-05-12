@@ -22,5 +22,5 @@ jobs:
 
       - name: Deploy to AWS Lightsail
         run: |
-          aws lightsail create-container-service-deployment --service-name Amacoon --containers file://docker-compose.yml --power micro
+          aws lightsail create-container-service-deployment --service-name amacoon --containers file://docker-compose.yml
 
