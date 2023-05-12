@@ -12,25 +12,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
+    
       - name: Update JSON file
         run: |
           IMAGE_REF=${{ github.event.client_payload.image_ref }}
           SERVICE=${{ github.event.client_payload.service }}
           jq --arg img_ref "$IMAGE_REF" '."$SERVICE".image = $img_ref' containers.json > temp.json && mv temp.json containers.json
-          
-
+    
+      - name: Show updated JSON file
+        run: cat containers.json
+    
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
+    
       - name: Deploy to AWS Lightsail
         run: |
           aws lightsail create-container-service-deployment --service-name amacoon --containers file://containers.json --public-endpoint file://public-endpoint.json
-
-          
-
-
+    
