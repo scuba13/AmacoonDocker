@@ -1,6 +1,6 @@
 {
   "nginx": {
-      "image": "scuba13/amacoon_nginx:latest",
+      "image": ":amacoon.amacoon-nginx.1",
       "command": [],
       "ports": {
           "80": "HTTP"
