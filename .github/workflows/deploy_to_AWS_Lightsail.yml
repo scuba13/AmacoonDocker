@@ -13,6 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Update JSON file
+        run: |
+          IMAGE_REF=${{ github.event.client_payload.image_ref }}
+          SERVICE=${{ github.event.client_payload.service }}
+          jq --arg img_ref "$IMAGE_REF" '."$SERVICE".image = $img_ref' containers.json > temp.json && mv temp.json containers.json
+          
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
