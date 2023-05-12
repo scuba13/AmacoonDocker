@@ -10,7 +10,7 @@
       }
   },
   "amacoonservice": {
-      "image": ":amacoon.amacoon-service.2",
+      "image": ":amacoon.amacoon-service.9",
       "ports": {
           "8080": "HTTP"
       }
