@@ -1,0 +1,18 @@
+{
+  "nginx": {
+      "image": ":scuba13/amacoon_nginx:latest",
+      "command": [],
+      "ports": {
+          "80": "HTTP"
+      },
+      "environment": {
+          "NGINX_ENVSUBST_OUTPUT_DIR": "/etc/nginx"
+      }
+  },
+  "amacoonservice": {
+      "image": ":scuba13/amacoon_service:latest",
+      "ports": {
+          "8080": "HTTP"
+      }
+  }
+}
