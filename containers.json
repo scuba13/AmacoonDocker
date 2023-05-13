@@ -1,6 +1,6 @@
 {
   "nginx": {
-    "image": "amacoon-nginx:latest",
+    "image": "222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:nginx",
       "command": [],
       "ports": {
           "80": "HTTP"
@@ -10,7 +10,7 @@
       }
   },
   "amacoonservice": {
-    "image": "amacoon-service:latest",
+    "image": "222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:service",
       "ports": {
           "8080": "HTTP"
       }
