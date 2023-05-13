@@ -1,6 +1,6 @@
 {
   "nginx": {
-      "image": ":amacoon.amacoon-nginx.1",
+    "image": "amacoon-nginx:latest",
       "command": [],
       "ports": {
           "80": "HTTP"
@@ -10,7 +10,7 @@
       }
   },
   "amacoonservice": {
-      "image": ":amacoon.amacoon-service.9",
+    "image": "amacoon-service:latest",
       "ports": {
           "8080": "HTTP"
       }
