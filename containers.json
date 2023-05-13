@@ -14,11 +14,6 @@
       "ports": {
           "8080": "HTTP"
       }
-  },
-  "phpmyadmin": {
-    "image": "222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:phpmyadmin",
-      "ports": {
-          "5000": "HTTP"
-      }
   }
+
 }
