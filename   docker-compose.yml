@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  # frontend:
+  #   image: scuba13/amacoon_web:latest
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - mynetwork
+
+  backend:
+    image: 222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:service
+    ports:
+      - '8080:8080'
+    networks:
+      - mynetwork
+
+  # nginx:
+  #   image: 222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:nginx
+  #   ports:
+  #     - "80:80"
+  #   networks:
+  #     - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

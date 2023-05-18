@@ -1,19 +1,21 @@
 {
   "nginx": {
     "image": "222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:nginx",
-      "command": [],
-      "ports": {
-          "80": "HTTP"
-      },
-      "environment": {
-          "NGINX_ENVSUBST_OUTPUT_DIR": "/etc/nginx"
-      }
+    "command": [],
+    "ports": {
+      "80": "HTTP"
+    },
+    "environment": {
+      "NGINX_ENVSUBST_OUTPUT_DIR": "/etc/nginx"
+    }
   },
   "amacoonservice": {
     "image": "222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:service",
-      "ports": {
-          "8080": "HTTP"
-      }
+    "ports": {
+      "8080": "HTTP"
+    },
+    "environment": {
+      "APP_ENV": "production"
+    }
   }
-
 }
