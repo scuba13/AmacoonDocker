@@ -17,5 +17,11 @@
     "environment": {
       "APP_ENV": "production"
     }
+  },
+  "amacoonweb": {
+    "image": "222377488320.dkr.ecr.us-east-1.amazonaws.com/amacoon:web",
+    "ports": {
+      "3000": "HTTP"
+    }
   }
 }
